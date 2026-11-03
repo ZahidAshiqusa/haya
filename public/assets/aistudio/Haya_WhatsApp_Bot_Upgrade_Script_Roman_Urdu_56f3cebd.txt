@@ -1,0 +1,557 @@
+WHATSAPP BOT UPGRADE – HAYA AI CHAT PERSONA
+GOOGLE AI STUDIO KE LIYE DETAILED MASTER DEVELOPMENT SCRIPT
+Language: Roman Urdu
+Project Type: Existing WhatsApp Bot mein naya AI conversation module integrate karna
+Timezone: Pakistan Standard Time (Asia/Karachi)
+
+============================================================
+1. SAB SE PEHLE EXISTING PROJECT KO SAMJHO – KUCH DELETE NA KARO
+============================================================
+
+Tum ek expert Senior Full-Stack Developer, WhatsApp Automation Engineer aur AI Integration Architect ho.
+
+Mere paas pehle se ek working WhatsApp Bot maujood hai. Is mein buttons, menus, commands, existing automation, aur doosre features pehle se implemented hain. Tumhara kaam naya bot zero se banana nahi, balkeh mere existing project ko carefully inspect karke us mein "Haya AI Chat Persona" feature add karna hai.
+
+MANDATORY RULES:
+- Sab se pehle complete existing codebase, folder structure, package.json, server.js, message handlers, button handlers, session management aur database structure inspect karo.
+- Existing buttons, commands, menus, APIs, authentication, sessions, deployment settings aur features ko remove ya break mat karo.
+- Existing architecture aur coding style ko jitna mumkin ho preserve karo.
+- Naye feature ko separate module/service ke taur par implement karo.
+- Agar existing project mein database hai to usi ko reuse karo. Warna suitable persistent database/storage add karne ki recommendation do.
+- Hard-coded secrets, API keys, WhatsApp credentials ya tokens source code mein mat likho. Environment variables use karo.
+- Pehle implementation plan aur existing files mein required changes ki list do. Us ke baad actual code changes implement karo.
+- Sirf demo ya pseudo-code nahi; complete working implementation, error handling, setup instructions aur tests provide karo.
+- Kisi existing feature ko tab tak modify mat karo jab tak Haya feature ke liye zaroori na ho.
+- Agar WhatsApp integration Baileys ya kisi aur library par hai to usi existing integration ko reuse karo. Agar official WhatsApp Business Platform use ho raha hai to us ke supported webhook/API flow ke mutabiq implement karo. WhatsApp ki terms, rate limits aur messaging policies follow karo.
+
+============================================================
+2. HAYA AI PERSONA – CHARACTER PROFILE
+============================================================
+
+Bot ke andar ek fictional AI chat character create karo jis ka naam "Haya" ho.
+
+Character profile:
+- Naam: Haya
+- Age: 20 years (fictional character profile)
+- Fictional location: Haseerpur
+- Language: Natural Pakistani Urdu
+- Communication style: Friendly, polite, respectful, warm aur conversational
+- Default replies: Urdu script mein
+- User agar Roman Urdu mein baat kare to Haya natural Urdu ya Roman Urdu mein jawab de sakti hai; default Urdu script rahe.
+- Haya apni conversation mein Pakistani culture, aam rozmarrah ke expressions aur natural conversational tone use kare.
+- Replies short-to-medium length hon. Har jawab unnecessarily lamba na ho.
+- Haya har message ka context samjhe aur previous conversation ko yaad rakhte hue jawab de.
+- Haya ek fictional AI character hai. Agar koi seedha poochay ke tum real ho ya AI, to Haya sach bataye ke woh AI character/chatbot hai. Kisi real larki ki identity, personal life ya real address ka jhoota dawa na kare.
+- Haseerpur ko fictional character setting ke taur par use karo; kisi real shakhs ka private address ya location disclose na karo.
+- User ko emotional pressure, financial demand, blackmail, ya manipulative relationship claims se engage na karo.
+
+Suggested personality:
+- Naram lehja
+- Respectful aur friendly
+- Kabhi halka sa mazaahiya andaaz
+- Gusse ya badtameezi ka jawab bhi tameez se
+- Har user ke saath appropriate boundaries
+- Har conversation mein apni fictional identity aur tone consistent rakhe
+
+============================================================
+3. HAYA KI FIXED VISUAL IDENTITY – IMAGE CONSISTENCY
+============================================================
+
+Haya ke liye ek fixed, original, fictional character portrait create ya configure karo.
+
+Visual description:
+- 20-year-old adult fictional Pakistani woman
+- Khoobsurat, natural aur realistic appearance
+- Decent Pakistani outfit
+- Clearly visible elegant earrings
+- Haath mein ek distinctive ring
+- Galle mein ek specific, unique necklace/locket
+- Soft, friendly facial expression
+- Clean, high-quality portrait
+- Respectful, non-sexualized presentation
+
+IDENTITY CONSISTENCY RULES:
+- Haya ka face, hairstyle, earrings, ring, necklace/locket aur overall appearance har image mein same rehna chahiye.
+- Har request par bilkul naya random face generate mat karo.
+- Ek approved master reference portrait ko permanent character asset ke taur par store karo.
+- Agar image generation system reference-image ya character-reference feature support karta hai to har generated image mein wahi reference use karo.
+- Agar reference consistency reliably possible na ho to approved fixed portrait hi send karo; inconsistent AI-generated pictures send na karo.
+- Character asset ko secure storage mein rakho aur us ka stable asset ID/database reference maintain karo.
+- User jab Haya ki picture maange to WhatsApp par approved portrait/image attachment bhejo.
+- Image bhejne se pehle confirm karo ke media URL ya file accessible hai, file type supported hai aur upload successful hua hai.
+- Sirf text mein image ka link likhne ke bajaye WhatsApp ke supported media-message mechanism se image bhejo.
+- Admin dashboard se Haya ki master picture update karne ka option do. Update ke baad new approved image ko default asset banaya ja sake.
+- Image caption natural Urdu mein ho, misal: "یہ میری تصویر ہے 😊"
+
+IMPORTANT:
+Haya ki tasveer ek fictional AI character ki honi chahiye. Kisi real person ki photo ko us ki permission ke baghair Haya ki identity bana kar use na karo.
+
+============================================================
+4. WHATSAPP NUMBER KE SAATH INTEGRATION
+============================================================
+
+Haya AI feature ko mere existing WhatsApp bot ke connected WhatsApp number ke saath integrate karo.
+
+Required flow:
+1. Koi user connected WhatsApp number par message bheje.
+2. Existing bot ka message receiver/webhook incoming message receive kare.
+3. Existing commands aur buttons ki priority preserve rahe.
+4. Agar message kisi existing command, button, menu ya automation se match karta hai to pehle existing handler execute ho.
+5. Agar message normal conversation hai to Haya AI Conversation Engine ko forward ho.
+6. Haya user ka message, conversation history aur relevant context samajh kar response generate kare.
+7. Generated response WhatsApp ke through usi user ko send ho.
+8. Har user ki conversation alag maintain ho. Ek user ka data ya context doosre user ko kabhi mix na ho.
+
+NUMBER AND SESSION MANAGEMENT:
+- Har WhatsApp sender ka stable chat ID/number identify karo.
+- Country code aur WhatsApp ID ko safely normalize karo.
+- Per-user conversation history maintain karo.
+- Per-user pending message queue maintain karo.
+- Per-user busy state aur scheduled reply state maintain karo.
+- Duplicate webhook/message events ko message ID ke zariye detect karo.
+- Ek hi incoming message ka duplicate response send na ho.
+- Blocked, opted-out ya disabled users ko AI replies send na hon.
+- Admin ko kisi user ke liye Haya AI enable/disable karne ka control do.
+
+============================================================
+5. AI CONVERSATION ENGINE
+============================================================
+
+Google AI Studio/Gemini API ko Haya ke response engine ke taur par integrate karo.
+
+AI system ko har request ke saath ye context provide karo:
+- Haya ka character profile
+- Conversation ki recent history
+- Current user message
+- User ki language preference, agar available ho
+- Current Pakistan time/date
+- Haya ka current state: available, busy, sleeping, ya scheduled
+- Message type: text, voice transcript, image request, ya other supported type
+
+RESPONSE RULES:
+- Natural Pakistani Urdu mein jawab do.
+- User ke sawal ka direct jawab do.
+- Ek hi baat baar baar repeat na karo.
+- Har message mein salam ya emoji lazmi na lagao.
+- User ke mood aur conversation ke context ko samjho.
+- Agar user voice note bheje to pehle us ka transcript samjho, phir relevant jawab do.
+- Agar user Haya ki picture maange to approved fixed image bhejne ka media action trigger karo.
+- Agar AI ko kisi baat ka yaqeen na ho to jhooti information invent na kare.
+- Sensitive personal, financial ya private information maangne par safe boundaries follow karo.
+- AI-generated reply ko send karne se pehle scheduling, sleep mode, busy mode aur opt-out rules check karo.
+
+AI prompt ko code mein ek separate configurable file/module mein rakho, taake future mein personality aur reply style update ki ja sake.
+
+============================================================
+6. VOICE NOTES – TRANSCRIPTION
+============================================================
+
+Agar koi user WhatsApp par voice note/audio message bheje:
+
+1. Incoming audio message detect karo.
+2. WhatsApp integration ke supported method se audio file download karo.
+3. File size, MIME type aur duration validate karo.
+4. Audio ko secure temporary storage mein process karo.
+5. Speech-to-text/transcription service ya supported Gemini audio capability se voice ko text mein convert karo.
+6. Urdu, Roman Urdu aur supported languages ko identify karne ki koshish karo.
+7. Transcript ko Haya AI engine ko context ke saath forward karo.
+8. Haya transcript ko samajh kar Urdu text message mein jawab de.
+9. User ko zaroorat par short confirmation do, misal: "آپ نے کہا کہ ..."
+10. Processing complete hone ke baad temporary audio file retention policy ke mutabiq delete karo.
+
+ERROR HANDLING:
+- Audio download fail ho to user ko polite Urdu message bhejo.
+- Audio unclear ho to dobara voice note bhejne ki request karo.
+- Unsupported audio format ko safely reject karo.
+- Transcription fail hone par blank ya invented transcript par reply mat bhejo.
+- Audio ko bina zaroorat permanently store mat karo.
+
+Is version mein default response text message ho. Voice reply/TTS optional feature ho aur admin setting se enable kiya ja sake. Haya ki AI voice ko kisi real person ki voice ki naqal banane ke liye use na karo.
+
+============================================================
+7. IMAGE REQUEST HANDLING
+============================================================
+
+Agar user message mein Haya ki picture/photo/image maange, jaise:
+- Apni picture bhejo
+- Haya photo send karo
+- Tasveer dikhao
+- Apni image bhejo
+
+To:
+1. Intent detect karo.
+2. Approved fixed Haya portrait asset retrieve karo.
+3. Duplicate image request ko rate-limit aur spam protection ke through handle karo.
+4. WhatsApp media API/library ke zariye image send karo.
+5. Image ke saath natural Urdu caption bhejo.
+6. Agar image asset unavailable ho to user ko honestly batao; fake success message mat bhejo.
+
+Admin ke liye option ho:
+- Master portrait upload/update
+- Current portrait preview
+- Image sending enable/disable
+- Allowed image formats aur maximum file size
+- Image request rate limit
+
+============================================================
+8. BUSY MODE – NATURAL DELAYED RESPONSES
+============================================================
+
+Haya kabhi kabhi busy state mein ho sakti hai. Is feature ko per-user ya global admin configuration ke saath implement karo.
+
+Example busy messages:
+- "میں ابھی تھوڑی مصروف ہوں، کچھ دیر میں بات کرتی ہوں۔"
+- "ابھی کھانا کھانے لگی ہوں، فارغ ہو کر جواب دیتی ہوں۔"
+- "ابھی برتن دھو رہی ہوں، تھوڑی دیر بعد بات کرتے ہیں۔"
+- "ابھی آرام کر رہی ہوں، کچھ دیر بعد بات کرتی ہوں۔"
+
+BUSY MODE FLOW:
+1. Busy state trigger hone par optional short Urdu acknowledgement send karo.
+2. Is ke baad us user ko foran repeated replies mat bhejo.
+3. Incoming messages ko per-user pending queue mein save karo.
+4. Busy duration 10 se 15 minutes ke darmiyan configurable ho.
+5. Delay ke dauran new messages queue mein add hote rahen.
+6. Busy period complete hone par queued messages ko chronological order mein process karo.
+7. Haya recent conversation context ke saath relevant jawab de.
+8. Ek hi user ko multiple duplicate acknowledgements mat bhejo.
+9. Agar user ne message delete kar diya ho ya opt-out/block kar diya ho to queued response cancel karo.
+10. Agar user ne kai messages bheje hon to unhein order ke mutabiq process karo; zaroorat par related messages ko ek context mein summarize karke natural response do.
+
+BUSY MODE CONTROL:
+- Admin dashboard se busy mode on/off
+- Busy duration minimum/maximum settings
+- Busy message templates
+- Random ya fixed delay option
+- Per-user busy status
+- Pending queue count
+- Failed jobs retry option
+
+Delay ko sirf natural conversation scheduling ke liye use karo. Kisi user ko manipulate, pressure ya mislead karne ke liye fake emergencies ya jhooti personal situations create na karo.
+
+============================================================
+9. NIGHT MODE – PAKISTAN TIME
+============================================================
+
+Timezone ko hard-coded UTC offset ke bajaye IANA timezone "Asia/Karachi" set karo.
+
+Night schedule:
+- Har raat 8:56 PM se 8:58 PM Pakistan time ke darmiyan Good Night message schedule karo.
+- Message 9:00 PM se 2-4 minutes pehle send ho.
+- Exact send time admin configuration se set ho sake.
+- Default message:
+
+"اب میں سونے جا رہی ہوں۔ اپنا خیال رکھیے گا۔ شب بخیر، اللہ حافظ۔ 😊"
+
+SLEEP MODE:
+- Good Night message send hone ke baad 9:00 PM se subah 5:00 AM tak Haya AI automatic replies na bheje.
+- Is duration mein incoming messages delete na hon.
+- Messages per-user pending queue mein safely save hon.
+- Duplicate webhook events queue mein duplicate entries create na karen.
+- Emergency/critical admin controls aur system monitoring sleep mode se independent rahen.
+- User ko sleep mode ke dauran automatic AI replies send na hon.
+- Sleep mode ko server restart, deployment ya process crash ke baad bhi persist rehna chahiye.
+
+IMPORTANT:
+- Night scheduler server ke local timezone par depend na kare.
+- Har schedule Asia/Karachi ke mutabiq calculate ho.
+- Daylight saving/timezone edge cases ke liye IANA timezone library use karo.
+- Missed scheduler run ke liye recovery logic ho, taake duplicate Good Night messages send na hon.
+
+============================================================
+10. MORNING MODE – 5:00 AM KE BAAD PENDING REPLIES
+============================================================
+
+Subah 5:00 AM Pakistan time par sleep mode end ho.
+
+Morning reply schedule:
+- 5:00 AM par pending queues ko process karne ke liye eligible mark karo.
+- Default morning dispatch 5:10 AM se 5:12 AM ke darmiyan start ho.
+- Admin dashboard se exact start time configurable ho.
+- Sirf un users ko message send karo jin ke paas actual pending messages hon.
+- Jin users ke pending messages nahi hain unhein Good Morning message mat bhejo.
+- Har user ki queue ko independently process karo.
+- Users ki queues ko fair order mein process karo, taake ek user ki wajah se doosre users ki queue permanently block na ho.
+
+PER USER MORNING FLOW:
+1. User ki pending queue retrieve karo.
+2. Messages ko original received timestamp ke order mein sort karo.
+3. Duplicate message IDs remove karo.
+4. Pehle ek salam message send karo:
+
+"السلام علیکم! صبح بخیر۔ 😊"
+
+5. Is ke baad us user ke pending messages ka jawab one by one chronological order mein do.
+6. Har response ke darmiyan configurable short interval rakho, taake WhatsApp rate limits follow hon.
+7. Har response ko usi message ke context ke mutabiq generate karo.
+8. Agar multiple messages ek hi sawal ya thought ka hissa hon to Haya unhein context mein samajh kar natural jawab de.
+9. Successfully sent message ko queue se completed mark karo.
+10. Failed message ko retry queue mein rakho, limited retry attempts aur backoff ke saath.
+11. Ek user ki queue complete hone par next eligible user ki queue process karo.
+12. Agar user ne subah se pehle message delete, opt-out ya block kiya ho to us ke pending replies cancel karo.
+
+MORNING EXAMPLE:
+Pending messages:
+- "کیا کر رہی ہو؟"
+- "کل کہاں چلی گئی تھیں؟"
+- "مجھے ایک بات پوچھنی ہے"
+
+Haya ka flow:
+1. "السلام علیکم! صبح بخیر۔ 😊"
+2. Pehle message ka relevant jawab.
+3. Doosre message ka relevant jawab.
+4. Teesre message ka relevant jawab.
+
+Yeh example sirf flow samjhane ke liye hai. AI ko conversation ke mutabiq genuine, relevant aur non-repetitive answers generate karne hain.
+
+============================================================
+11. MESSAGE QUEUE AUR SCHEDULER ARCHITECTURE
+============================================================
+
+Reliable background job system implement karo.
+
+Recommended architecture:
+- Incoming Message Handler
+- Existing Bot Command/Button Router
+- Haya AI Conversation Service
+- Per-User Conversation Store
+- Per-User Pending Message Queue
+- Busy Mode Scheduler
+- Night/Sleep Scheduler
+- Morning Queue Dispatcher
+- WhatsApp Outbound Message Service
+- Retry/Dead-Letter Queue
+- Admin Monitoring Dashboard
+
+QUEUE REQUIREMENTS:
+- Persistent queue use karo; sirf in-memory array par depend mat karo.
+- Server restart par pending jobs lose na hon.
+- Har job ka unique ID ho.
+- Job status: pending, processing, sent, failed, cancelled.
+- Retry count aur next retry time store karo.
+- Idempotency key use karo.
+- Per-user ordering preserve karo.
+- Global concurrency limit aur per-number rate limit implement karo.
+- Failed jobs ke liye exponential backoff use karo.
+- Repeated failure par dead-letter queue aur admin alert ho.
+- Queue processing graceful shutdown support kare.
+- Logs mein sensitive message content unnecessarily expose na ho.
+
+============================================================
+12. ADMIN DASHBOARD SETTINGS
+============================================================
+
+Existing admin dashboard mein "Haya AI Settings" section add karo.
+
+Settings:
+- Haya AI enable/disable
+- Connected WhatsApp number/status
+- Gemini API key environment status (key khud dashboard par expose na ho)
+- AI model configuration
+- Haya persona prompt editor
+- Default reply language
+- Master portrait upload/preview
+- Picture sending enable/disable
+- Voice transcription enable/disable
+- Busy mode enable/disable
+- Busy duration
+- Busy message templates
+- Night mode enable/disable
+- Good Night message
+- Good Night send window
+- Sleep start/end time
+- Morning dispatch time
+- Per-user queue status
+- Pending messages count
+- Failed messages count
+- Retry failed jobs
+- Per-user AI enable/disable
+- User block/opt-out management
+- Conversation retention settings
+- Audit logs
+
+Dashboard responsive ho aur existing admin UI ka design system preserve kare.
+
+============================================================
+13. DATABASE DESIGN
+============================================================
+
+Existing database ko inspect karke compatible schema add karo. Suggested entities:
+
+A. HayaUser
+- id
+- whatsappId
+- displayName (optional)
+- languagePreference
+- aiEnabled
+- optedOut
+- createdAt
+- updatedAt
+
+B. HayaConversation
+- id
+- whatsappId
+- role
+- messageText
+- messageType
+- sourceMessageId
+- createdAt
+
+C. HayaPendingMessage
+- id
+- whatsappId
+- sourceMessageId
+- messageText/transcript
+- messageType
+- receivedAt
+- status
+- retryCount
+- nextAttemptAt
+- processedAt
+
+D. HayaSettings
+- id
+- enabled
+- timezone
+- busyModeEnabled
+- busyMinMinutes
+- busyMaxMinutes
+- nightModeEnabled
+- sleepStartTime
+- sleepEndTime
+- morningDispatchTime
+- goodNightMessage
+- morningMessage
+- masterPortraitAssetId
+- voiceTranscriptionEnabled
+
+E. HayaJob
+- id
+- jobType
+- whatsappId
+- scheduledAt
+- status
+- idempotencyKey
+- retryCount
+- lastError
+- createdAt
+- updatedAt
+
+Schema ko existing database technology ke mutabiq adapt karo. Sensitive data ko minimize aur protect karo. Database migrations aur indexes provide karo.
+
+============================================================
+14. PRIVACY, SECURITY AUR WHATSAPP POLICY
+============================================================
+
+- Users ko transparent tareeqe se bataya jaye ke woh AI chatbot se baat kar rahe hain.
+- Bot kisi real 20-year-old woman hone ka false claim na kare.
+- Personal data sirf feature ke liye zaroori had tak store ho.
+- Conversation retention configurable ho.
+- API keys aur credentials environment variables/secrets manager mein hon.
+- Webhook signature verification aur request validation implement karo.
+- Admin routes authentication aur authorization ke baghair accessible na hon.
+- Rate limiting, spam protection aur abuse prevention implement karo.
+- User ke STOP/UNSUBSCRIBE ya equivalent opt-out request ko recognize karke AI messaging band karo.
+- Opt-out users ko scheduled, busy ya morning messages send na hon.
+- WhatsApp Business Platform use ho to approved templates, opt-in aur messaging window rules follow karo.
+- Baileys ya other unofficial integration use ho to WhatsApp terms aur operational risks clearly document karo; platform restrictions ko bypass karne ki koshish na karo.
+- Logs mein API tokens, private credentials aur unnecessary personal content store na karo.
+- User data deletion/export ke liye admin-controlled privacy workflow provide karo.
+
+============================================================
+15. ERROR HANDLING AUR RELIABILITY
+============================================================
+
+In cases ke liye proper handling implement karo:
+- Gemini API unavailable
+- Gemini rate limit
+- WhatsApp send failure
+- Webhook duplicate
+- Database connection failure
+- Scheduler crash/restart
+- Queue worker crash
+- Invalid audio file
+- Transcription failure
+- Portrait asset missing
+- User blocked or opted out
+- Invalid WhatsApp ID
+- Network timeout
+
+System ko failure ke baad recover hona chahiye. User ko fake "message sent" confirmation mat do. Har important operation ka result verify karo.
+
+============================================================
+16. TESTING – ACCEPTANCE TESTS
+============================================================
+
+Implementation complete hone ke baad ye tests run karo:
+
+TEST 1:
+Normal WhatsApp text message aaye. Existing command/button handling break na ho aur normal chat Haya AI ko route ho.
+
+TEST 2:
+Do different users message karein. Dono ki conversation history separate rahe.
+
+TEST 3:
+User Haya ki picture maange. Approved fixed portrait WhatsApp media ke taur par send ho.
+
+TEST 4:
+User Urdu voice note bheje. Audio transcript generate ho aur Haya Urdu text reply de.
+
+TEST 5:
+Busy mode active ho. User ko configured acknowledgement mile, phir 10-15 minute tak messages queue hon aur delay ke baad replies process hon.
+
+TEST 6:
+8:56-8:58 PM Pakistan time par Good Night message schedule ke mutabiq send ho.
+
+TEST 7:
+9:00 PM ke baad 5:00 AM tak automatic Haya replies na hon. Incoming messages queue mein safe rahen.
+
+TEST 8:
+5:10-5:12 AM par sirf pending-message users process hon. Pehle salam/Good Morning, phir un ke pending messages ke relevant replies one by one send hon.
+
+TEST 9:
+Server restart ke baad pending queues aur scheduled jobs recover hon.
+
+TEST 10:
+Duplicate webhook event se duplicate response ya duplicate queue entry create na ho.
+
+TEST 11:
+Opt-out user ko koi scheduled ya AI message send na ho.
+
+TEST 12:
+Existing bot ke buttons, menus, commands aur doosre features pehle ki tarah kaam karein.
+
+TEST 13:
+Pakistan timezone ki wajah se schedule UTC/local server time se shift na ho.
+
+TEST 14:
+WhatsApp/Gemini rate limit aur temporary failure par retry/backoff correctly work kare.
+
+============================================================
+17. FINAL DELIVERABLES
+============================================================
+
+Mujhe ye complete deliverables chahiye:
+
+1. Existing project ka architecture review.
+2. Existing aur proposed architecture ka short comparison.
+3. Files-to-change aur files-to-add ki list.
+4. Complete implemented source code.
+5. Updated database schema aur migrations.
+6. Haya AI prompt/configuration module.
+7. Voice transcription integration.
+8. Fixed portrait asset management.
+9. Persistent per-user message queues.
+10. Busy mode scheduler.
+11. Pakistan timezone night/sleep scheduler.
+12. Morning pending-message dispatcher.
+13. Admin dashboard settings.
+14. Security and privacy implementation.
+15. Unit/integration tests.
+16. .env.example with variable names only, no real secrets.
+17. Local setup instructions.
+18. Deployment instructions for my existing hosting platform.
+19. Troubleshooting guide.
+20. Clear list of any feature that cannot be guaranteed because of WhatsApp API, device, hosting, or provider limitations.
+
+FINAL INSTRUCTION:
+Mere existing WhatsApp Bot ko carefully upgrade karo. Existing button system aur tamam current features ko preserve karna sab se important hai. Haya AI ko isolated, configurable aur maintainable module ke taur par integrate karo. Pehle codebase inspect karo, phir plan do, phir implementation karo. Kisi feature ko working kehne se pehle us ka test run karo aur test result report karo. Agar kisi API ya platform ki limitation ho to usay clearly explain karo; unsupported functionality ko working claim mat karo.
